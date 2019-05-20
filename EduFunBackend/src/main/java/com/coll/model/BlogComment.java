@@ -14,7 +14,7 @@ import javax.persistence.Table;
 public class BlogComment 
 {
 	@Id
-	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="blogcommentgid_seq")
+	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="blogcommentid_seq")
 	int commentId;
 	int blogId;
 	String commentData;

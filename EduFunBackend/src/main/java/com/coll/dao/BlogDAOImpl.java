@@ -12,7 +12,7 @@ import org.springframework.stereotype.Repository;
 
 import com.coll.model.Blog;
 
-@Repository("BlogDAO")
+@Repository("blogDAO")
 @Transactional
 public class BlogDAOImpl implements BlogDAO
 {

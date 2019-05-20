@@ -23,9 +23,9 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 			public DataSource getDataSource()
 			{
 				DriverManagerDataSource dataSource=new DriverManagerDataSource();
-				dataSource.setDriverClassName("oracle.jdbc.Driver.OracleDriver");
-				dataSource.setUrl("jdbc:h2:tcp://localhost/~/demo");
-				dataSource.setUsername("sys");
+				dataSource.setDriverClassName("oracle.jdbc.OracleDriver");
+				dataSource.setUrl("jdbc:oracle:thin:vashnavi@//localhost:1521/orcl");
+				dataSource.setUsername("vashnavi");
 				dataSource.setPassword("oracle");
 				return dataSource;
 			}
@@ -35,8 +35,10 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 			{
 				LocalSessionFactoryBuilder lsfb=new LocalSessionFactoryBuilder(getDataSource());
 				Properties prop=new Properties();
-				prop.put("hibernate.dialect",org.hibernate.dialect.H2Dialect.class);
-				prop.put("hibernate.hbm2ddl.auto", "update");//fix
+				prop.put("hibernate.dialect","org.hibernate.dialect.Oracle10gDialect");
+				prop.put("hibernate.hbm2ddl.auto", "create-drop");//fix
+				prop.put("hibernate.show_sql", "true");//fix
+				prop.put("hibernate.format_sql", "true");//fix
 				lsfb.addProperties(prop);
 				lsfb.scanPackages("com.coll");//fix
 				SessionFactory sessionFactory=lsfb.buildSessionFactory();

@@ -11,7 +11,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table
-@SequenceGenerator(name="blogcommentid_seq",sequenceName="blogcommentIdSeq")
+@SequenceGenerator(name="forumcommentgid_seq",sequenceName="forumcommentgid_seq")
 public class ForumComment {
 	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="forumcommentgid_seq")
