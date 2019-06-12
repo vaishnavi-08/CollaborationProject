@@ -14,7 +14,26 @@ public class Friend {
 	int id;
 	String fromId;
 	String toId;
+	String username;
+	String friendusername;
 	char status;
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getFriendusername() {
+		return friendusername;
+	}
+
+	public void setFriendusername(String friendusername) {
+		this.friendusername = friendusername;
+	}
+
+
 
 	public int getId() {
 		return id;

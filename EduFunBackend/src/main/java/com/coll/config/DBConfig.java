@@ -13,6 +13,12 @@ import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.coll.model.Blog;
+import com.coll.model.BlogComment;
+import com.coll.model.Friend;
+import com.coll.model.Job;
+import com.coll.model.UserDetail;
+
 	@Configuration	
 	@ComponentScan(basePackages="com.coll")
 	@EnableTransactionManagement
@@ -36,7 +42,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 				LocalSessionFactoryBuilder lsfb=new LocalSessionFactoryBuilder(getDataSource());
 				Properties prop=new Properties();
 				prop.put("hibernate.dialect","org.hibernate.dialect.Oracle10gDialect");
-				prop.put("hibernate.hbm2ddl.auto", "create-drop");//fix
+				prop.put("hibernate.hbm2ddl.auto", "update");//fix
 				prop.put("hibernate.show_sql", "true");//fix
 				prop.put("hibernate.format_sql", "true");//fix
 				lsfb.addProperties(prop);
