@@ -1,0 +1,23 @@
+<div class="container" ng-controller="BlogController">
+<table class="table table-ordered">
+<br bgcolor="pink">
+<tr>
+<td colspan="2" class="text-center">Sign in Here</td>
+</tr>
+<tr>
+<td>Username</td>
+<td><input type="text" name="uname" ng-model="user.username"/></td>
+</tr>
+<tr>
+<td>Blog Content</td>
+<td><textarea cols="20" rows="7" name="blogContent" ng-model=""></textarea></td>
+</tr>
+<br bgcolor="pink">
+<td colspan="2">
+<center>
+<input type="button" class="btn btn-success" ng-click="loginCheck()" value="Sign In"/>
+<a href="#/register">Sign Up</a>
+</center>
+</td>
+</table>
+</div>

@@ -1,0 +1,27 @@
+<div class="container" ng-controller="BlogController">
+<h2 align="center">Managing Blog</h2>
+  <p>The .table class adds basic styling (light padding and only horizontal dividers) to a table:</p>            
+  <table class="table table-condensed">
+    <thead>
+      <tr>
+        <th>Blog Name</th>
+        <th>Created By</th>
+        <th>Created Date</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="blog in blogData">
+        <td>{{blog.blogName}}</td>
+        <td>{{blog.username}}</td>
+        <td>{{blog.createDate}}</td>
+        <td ng-hide="blog.status=='A'">
+        <input type="button" value="Approve" class="btn btn-success" ng-click="approve(blog.blogId)"/>
+        </td>
+        <td ng-hide="blog.status=='NA'">
+        <input type="button" value="Reject" class="btn btn-danger" ng-click="reject(blog.blogId)"/>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
